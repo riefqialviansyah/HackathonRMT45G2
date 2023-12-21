@@ -32,14 +32,17 @@
 
     .centered-box {
       text-align: center;
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 20px;
+      background: rgba(44, 43, 43, 0.7); 
+      backdrop-filter: blur(3px); 
+      padding: 40px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 10px rgba(201, 17, 207, 8.0);
+      position: relative;
+      overflow: hidden;
     }
 
     img {
-      max-width: 50%;
+      max-width: 80%;
       height: auto;
       border-radius: 8px;
       margin-bottom: 10px;
@@ -48,6 +51,7 @@
     p {
       font-size: 18px;
       margin-bottom: 10px;
+      color: white;
     }
 
     .options {
@@ -63,11 +67,15 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      padding: 10px 20px;
+      padding: 7px;
       font-size: 16px;
       margin-bottom: 5px;
       transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
       font-family: 'Pixelify Sans', sans-serif;
+      width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .option-box:hover {
@@ -79,19 +87,44 @@
     .option-box:active {
       transform: scale(0.95);
     }
+    .skip-button {
+      background-color: #c02484;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 15px;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      font-family: 'Pixelify Sans', sans-serif;
+    }
+
+    .skip-button:hover {
+      background-color: #e71689;
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .skip-button:active {
+      transform: scale(0.95);
+    }
+
+    p#pertanyaanBox {
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="centered-box">
-    <img id="gambarBox" src="aaaaaaaa.jpg" alt="Image Description">
-    <p id="pertanyaanBox">Pertanyaan: Apakah ini gambar yang benar?</p>
+    <img id="gambarBox" src="bekasi.jpg" alt="Image Description">
+    <p id="pertanyaanBox">Apa nama negara dari foto tersebut?</p>
     <div class="options" id="jawabanBox">
-      <button class="option-box" onclick="selectOption('A')">A. Jawaban A</button>
-      <button class="option-box" onclick="selectOption('B')">B. Jawaban B</button>
-      <button class="option-box" onclick="selectOption('C')">C. Jawaban C</button>
+      <button id="optionA" class="option-box" onclick="selectOption('A')">A. Indonesia</button>
+      <button id="optionB" class="option-box" onclick="selectOption('B')">B. Malaysia</button>
+      <button id="optionC" class="option-box" onclick="selectOption('C')">C. Bekasi</button>
     </div>
-    <button class="generate-button" onclick="generateNewQuestion()">Generate New Image</button>
+    <button id="skipButton" class="skip-button" onclick="generateNewQuestion()">Skip</button>
   </div>
-
 </body>
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Highscores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url('xK.gif');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: 'Pixelify Sans', sans-serif;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .highscores-box {
+      background: rgba(117, 117, 117, 0.4);
+      backdrop-filter: blur(3px); 
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 11px rgb(243, 133, 219);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .highscores-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+
+    .highscore-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: rgb(246, 244, 247);
+      text-shadow: 0 0 10px rgba(243, 133, 219, 0.8);
+    }
+
+    h2 {
+      text-align: center; 
+    }
+
+    .play-again-button {
+      background-color: #c02484;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      font-family: 'Pixelify Sans', sans-serif;
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .play-again-button:hover {
+      background-color: #e71689;
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .play-again-button:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+    <div class="highscores-box">
+        <h2>Highscores</h2>
+        <ul class="highscores-list">
+          <li class="highscore-item" id="player1Score">
+            Player 1 - Score: 100
+          </li>
+          <li class="highscore-item">
+            <button id="playAgainButton" class="play-again-button" onclick="startGame()">Play Again</button>
+          </li>
+        </ul>
+      </div>
+</body>
+</html>
