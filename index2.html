@@ -8,7 +8,7 @@
   <style>
     body {
       display: flex;
-      align-items: center;
+      align-items: top;
       justify-content: center;
       height: 100vh;
       margin: 0;
@@ -19,6 +19,7 @@
       font-family: 'Pixelify Sans', sans-serif;
       opacity: 0;
       animation: fadeIn 1s ease-in-out forwards;
+      text-align: center;
     }
 
     @keyframes fadeIn {
@@ -34,45 +35,24 @@
       text-align: center;
     }
 
-    .instruksi {
-      vertical-align: top;
-    }
 
     h1 {
       font-family: 'Pixelify Sans', sans-serif;
-      font-size: 80px; 
+      font-size: 50px; 
       color: #f7f7f7;
       text-shadow: 0 0 10px rgba(68, 22, 58, 0.8), 0 0 20px rgba(255, 0, 200, 0.6), 0 0 30px rgba(255, 0, 200, 0.4);
+      font-stretch:narrower;
     }
 
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: rgba(186, 80, 212, 0.8);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      font-family: 'Pixelify Sans', sans-serif;
-    }
-
-    button:hover {
-      background-color: #cda0d4;
-      transform: scale(1.1);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    button:active {
-      transform: scale(0.95);
-    }
   </style>
 </head>
 <body>
-  <div class="Instruksi">
-    <h1>Jawab pertanyaan dibawah ini</h1>
-    <button onclick="tebakGambar()">Start</button>
-  </div>
+    <h1>Jawab pertanyaannya ya gan. . .</h1>
+      <div class="pertanyaan">
+        <h2>
+        <p id="pertanyaan">Kenapa Thanos tidak punya rambut?</p>
+        </h2>
+      </div>
 
   <script src="script.js"></script>
 
