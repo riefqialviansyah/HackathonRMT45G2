@@ -2,14 +2,14 @@ if(document.title !== 'Highscores'){
   const list = [
     {
       id: 1,
-      image: "",
+      image: URL('kembangdesa.jpg'),
       pertanyaan: "Kembang, kembang apa yang ngga mungkin dicium?",
       pilihanJawaban: ["kembang desa", "kembang 7 rupa", "kembang api"],
       jawabanBenar: "kembang api",
     },
     {
       id: 2,
-      image: "",
+      image: URL('ANJING.webp'),
       pertanyaan: "Gimana cara biar anjing tidak kencing di jok depan?",
       pilihanJawaban: [
         "ngga usah ikut pergi",
@@ -20,7 +20,7 @@ if(document.title !== 'Highscores'){
     },
     {
       id: 3,
-      image: "",
+      image: URL('jet-6234694_1280.jpg'),
       pertanyaan: "Ketika kapal tenggelam atau pesawat jatuh, munculnya dimana?",
       pilihanJawaban: [
         "di dasar laut dan di daratan",
@@ -157,3 +157,8 @@ if(document.title !== 'Highscores'){
     window.location.href = 'index2.html'
   })
 }
+
+
+
+
+
