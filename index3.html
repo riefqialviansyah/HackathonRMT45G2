@@ -91,13 +91,15 @@
     <div class="highscores-box">
         <h2>Highscores</h2>
         <ul class="highscores-list">
-          <li class="highscore-item" id="player1Score">
-            Player 1 - Score: 100
+          <li class="highscore-item" id="player1Score" style="display: flex; justify-content: space-between;">
+            <span>Player 1</span>
+            <label id="scorePlayer1">100</label>
           </li>
           <li class="highscore-item">
-            <button id="playAgainButton" class="play-again-button" onclick="startGame()">Play Again</button>
+            <button id="playAgainButton" class="play-again-button">Play Again</button>
           </li>
         </ul>
       </div>
+      <script src="script.js"></script>
 </body>
 </html>

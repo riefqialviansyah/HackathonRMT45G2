@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
   <style>
     body {
       display: flex;
-      align-items: top;
+      align-items: center;
       justify-content: center;
       height: 100vh;
       margin: 0;
@@ -19,7 +20,6 @@
       font-family: 'Pixelify Sans', sans-serif;
       opacity: 0;
       animation: fadeIn 1s ease-in-out forwards;
-      text-align: center;
     }
 
     @keyframes fadeIn {
@@ -42,5 +42,92 @@
       overflow: hidden;
     }
 
+    img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .option-box {
+      background-color: rgba(186, 80, 212, 0.8);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 7px;
+      font-size: 16px;
+      margin-bottom: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      font-family: 'Pixelify Sans', sans-serif;
+      width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .option-box:hover {
+      background-color: #cda0d4;
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .option-box:active {
+      transform: scale(0.95);
+    }
+    .skip-button {
+      background-color: #c02484;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 15px;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      font-family: 'Pixelify Sans', sans-serif;
+    }
+
+    .skip-button:hover {
+      background-color: #e71689;
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .skip-button:active {
+      transform: scale(0.95);
+    }
+
+    p#pertanyaanBox {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="centered-box">
+    <img id="gambarBox" src="" alt="Image Description">
+    <p id="pertanyaanBox"></p>
+    <div class="options" id="jawabanBox">
+      <button id="optionA" class="option-box"></button>
+      <button id="optionB" class="option-box"></button>
+      <button id="optionC" class="option-box"></button>
+    </div>
+    <!-- <button id="skipButton" class="skip-button"><a href="index3.html">Skip</a></button> -->
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
