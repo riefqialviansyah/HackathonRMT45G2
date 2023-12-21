@@ -2,14 +2,14 @@ if(document.title !== 'Highscores'){
   const list = [
     {
       id: 1,
-      image: "",
+      image: "IMAGES/kembangdesa.jpg",
       pertanyaan: "Kembang, kembang apa yang ngga mungkin dicium?",
       pilihanJawaban: ["kembang desa", "kembang 7 rupa", "kembang api"],
       jawabanBenar: "kembang api",
     },
     {
       id: 2,
-      image: "",
+      image: "IMAGES/anjing.jpg",
       pertanyaan: "Gimana cara biar anjing tidak kencing di jok depan?",
       pilihanJawaban: [
         "ngga usah ikut pergi",
@@ -20,7 +20,7 @@ if(document.title !== 'Highscores'){
     },
     {
       id: 3,
-      image: "",
+      image: "IMAGES/jet.jpeg",
       pertanyaan: "Ketika kapal tenggelam atau pesawat jatuh, munculnya dimana?",
       pilihanJawaban: [
         "di dasar laut dan di daratan",
@@ -32,14 +32,14 @@ if(document.title !== 'Highscores'){
     },
     {
       id: 4,
-      image: "",
+      image: "IMAGES/kapasbesi.jpeg",
       pertanyaan: "Lebih berat mana, 100Kg kapas atau 1ooKg besi?",
       pilihanJawaban: ["besi lah bro", "kapas sih kayaknya", "sama-sama berat"],
       jawabanBenar: "sama-sama berat",
     },
     {
       id: 5,
-      image: "",
+      image: "IMAGES/revalina.jpg",
       pertanyaan: "sayur apa yang pintar nyanyi?",
       pilihanJawaban: ["karakter bawang putih", "kol-aborasi", "Kolplay"],
       jawabanBenar: "Kolplay",
@@ -72,7 +72,7 @@ if(document.title !== 'Highscores'){
       let perSoal = list[counterPertanyaan];
       let {image,pertanyaan,pilihanJawaban} = perSoal;
   
-      gambarBox.style.backgroundImage = image;
+      gambarBox.setAttribute("src", image)
       optionA.innerHTML = pilihanJawaban[0]
       optionB.innerHTML = pilihanJawaban[1]
       optionC.innerHTML = pilihanJawaban[2]
@@ -121,11 +121,22 @@ if(document.title !== 'Highscores'){
                 tidakIsiNama = false;
               };
             };
-
+            
             let scoreSebelum = localStorage.getItem("last-score");
 
-            localStorage.setItem("nama", `${nama}`);
+            if(scoreSebelum === null){
+              localStorage.setItem("nama", `${nama}`);
             localStorage.setItem("last-score", `${score}`);
+            }else{
+              
+              localStorage.setItem("namaPenantang", `${nama}`);
+              localStorage.setItem("scorePenantang", `${score}`);
+
+              
+            }
+
+            
+            
 
             window.location.href = 'index3.html'
           }
@@ -140,20 +151,41 @@ if(document.title !== 'Highscores'){
     optionA.innerHTML = pilihanJawaban[0]
     optionB.innerHTML = pilihanJawaban[1]
     optionC.innerHTML = pilihanJawaban[2]
-    gambarBox.attributes.src = image;
+    gambarBox.setAttribute("src", image)
     pertanyaanBox.innerHTML = pertanyaan;
     gantiSoal()
   }
   pertama()
 }else{
+  let scorePenantang = localStorage.getItem("scorePenantang");
+  let namaPenantang = localStorage.getItem("namaPenantang");
   let lastScore = localStorage.getItem("last-score");
-  document.getElementById("scorePlayer1").innerHTML = lastScore;
-  
   let namaLastScore = localStorage.getItem("nama");
-  document.getElementById("namaPlayer").innerHTML = namaLastScore;
+
+  console.log(scorePenantang === null);
+  console.log(Number(scorePenantang) > Number(lastScore), Number(scorePenantang), Number(lastScore));
+
+  if(scorePenantang !== null){
+    if(Number(scorePenantang) > Number(lastScore)){
+      document.getElementById("scorePlayer1").innerHTML = scorePenantang;
+      document.getElementById("player1Score").innerHTML = namaPenantang;
+      localStorage.setItem("nama", `${namaPenantang}`);
+      localStorage.setItem("last-score", `${scorePenantang}`);
+    }else{
+      document.getElementById("scorePlayer1").innerHTML = lastScore;
+      document.getElementById("player1Score").innerHTML = namaLastScore;
+    }
+  }else{
+    document.getElementById("scorePlayer1").innerHTML = lastScore;
+    document.getElementById("player1Score").innerHTML = namaLastScore;
+  }
+
+  
   
   const mainLagi = document.getElementById("playAgainButton");
   mainLagi.addEventListener("click", function(){
     window.location.href = 'index2.html'
   })
+
+  
 }
