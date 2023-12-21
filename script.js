@@ -186,12 +186,21 @@ if (document.title !== "Highscores") {
   mainLagi.addEventListener("click", function () {
     window.location.href = "index2.html";
   });
+  
+  const playAndReset = document.getElementById("playAndReset")
+  playAndReset.addEventListener("click", function(){
+    localStorage.removeItem("nama")
+    localStorage.removeItem("last-score")
+    let scorePenantang = localStorage.getItem("scorePenantang")
+    if(scorePenantang !== null){
+      localStorage.removeItem("scorePenantang")
+      localStorage.removeItem("namaPenantang")
+    }
+    window.location.href = "index2.html";
+  })
 
   const kritikSaran = document.getElementById("kritikSaran");
   kritikSaran.addEventListener("click", function () {
     window.location.href = "index2.html";
   });
-
-  
 }
-
