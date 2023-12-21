@@ -157,9 +157,3 @@ if(document.title !== 'Highscores'){
     window.location.href = 'index2.html'
   })
 }
-
-
-
-
-
-
